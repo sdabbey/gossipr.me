@@ -1,0 +1,1147 @@
+@font-face {
+  font-family: "cheeky rabbit";
+  src: url("../fonts/cheeky.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins.ttf") format("truetype");
+}
+:root {
+  --bg-color: #0C0C0C;
+  --accent-color:#0f0f0f;
+  --navbar-color: #161616;
+  --search-bg: #171717;
+  --btn-bg: #2e2d2c24;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+body .navbar {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  color: white;
+  background: var(--navbar-color);
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+body .navbar .nav-trigger {
+  display: none;
+}
+body .navbar .nav-logo {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .navbar .nav-logo a {
+  text-decoration: none;
+}
+body .navbar .nav-logo a h3 {
+  font-size: 2em;
+  letter-spacing: 0.05cm;
+  font-family: "cheeky rabbit";
+  color: white;
+}
+body .navbar .nav-content {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+body .navbar .nav-content li {
+  list-style: none;
+}
+body .navbar .nav-content li a {
+  color: white;
+  text-decoration: none;
+  font-family: "cheeky rabbit";
+  font-size: 1.5em;
+  letter-spacing: 0.03cm;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+body .navbar .nav-content li a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+body .body-content {
+  width: 100%;
+  height: 90vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .body-content .sidebar {
+  display: none;
+}
+body .body-content .sidenav {
+  height: 100%;
+  width: 25%;
+  box-sizing: border-box;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 0.5s ease;
+  margin: 0;
+  padding: 2%;
+  gap: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body .body-content .sidenav::-webkit-scrollbar {
+  width: 0.5rem;
+  background: transparent;
+  height: 1rem;
+}
+body .body-content .sidenav::-webkit-scrollbar-thumb {
+  height: 2rem;
+  border-radius: 20px 20px;
+  margin: 20rem;
+  background-color: var(--navbar-color);
+}
+body .body-content .sidenav::-webkit-scrollbar-track {
+  width: 2%;
+  padding: 4rem;
+}
+body .body-content .sidenav::-webkit-scrollbar-track-piece {
+  width: 20px;
+}
+body .body-content .sidenav .close {
+  display: none;
+}
+body .body-content .sidenav .headline {
+  padding: 2%;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.185);
+}
+body .body-content .sidenav .headline h4 {
+  color: white;
+  width: 100%;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins";
+  margin: 0;
+  gap: 10px;
+}
+body .body-content .sidenav .headline h4 i.bx {
+  font-size: 1.2em;
+}
+body .body-content .sidenav .headline .list-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  padding: 0;
+  gap: 5px;
+}
+body .body-content .sidenav .headline .list-item li {
+  list-style: none;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+body .body-content .sidenav .headline .list-item li .avatar {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50px 50px;
+}
+body .body-content .sidenav .headline .list-item li .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .body-content .sidenav .headline .list-item li .username {
+  color: white;
+  font-family: "cheeky rabbit";
+  font-weight: bold;
+  letter-spacing: 0.03cm;
+}
+body .body-content .sidenav .search-post {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  padding: 2%;
+  box-sizing: border-box;
+  align-items: center;
+  position: relative;
+}
+body .body-content .sidenav .search-post input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  outline: none;
+  color: rgba(255, 255, 255, 0.493);
+  border: none;
+  border-radius: 3px;
+  background-color: var(--search-bg);
+  font-family: "cheeky rabbit";
+  font-size: 1.3em;
+}
+body .body-content .sidenav .search-post input::-webkit-search-cancel-button {
+  display: none;
+}
+body .body-content .sidenav .search-post i.bx {
+  color: rgba(255, 255, 255, 0.678);
+  position: absolute;
+  margin-left: auto;
+  right: 5%;
+  font-size: 1.3em;
+}
+body .body-content .sidenav .popular-post {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2%;
+  font-family: "Poppins";
+  height: 60vh;
+  overflow-y: scroll;
+  position: relative;
+}
+body .body-content .sidenav .popular-post::-webkit-scrollbar {
+  width: 0.5rem;
+  background: transparent;
+  height: 1rem;
+}
+body .body-content .sidenav .popular-post::-webkit-scrollbar-thumb {
+  height: 2rem;
+  border-radius: 20px 20px;
+  margin: 20rem;
+  background-color: var(--navbar-color);
+}
+body .body-content .sidenav .popular-post::-webkit-scrollbar-track {
+  width: 2%;
+  padding: 4rem;
+}
+body .body-content .sidenav .popular-post::-webkit-scrollbar-track-piece {
+  width: 20px;
+}
+body .body-content .sidenav .popular-post .header {
+  width: 100%;
+  display: flex;
+  height: 15%;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-bottom: 2%;
+  position: relative;
+}
+body .body-content .sidenav .popular-post .header h3 {
+  font-size: 1em;
+  color: white;
+}
+body .body-content .sidenav .popular-post .header a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+body .body-content .sidenav .popular-post .post-cards {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 2%;
+  padding-bottom: 0;
+}
+body .body-content .sidenav .popular-post .post-cards .post {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100px;
+  z-index: 2;
+  box-sizing: border-box;
+  background: var(--accent-color);
+  padding: 0.5rem 0.8rem;
+  color: white;
+  font-family: "Ubuntu";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.082);
+  transition: all 0.4s ease-out;
+}
+body .body-content .sidenav .popular-post .post-cards .post:nth-child(1) {
+  background-color: rgba(89, 172, 255, 0.031372549);
+}
+body .body-content .sidenav .popular-post .post-cards .post:nth-child(2) {
+  background-color: rgba(255, 89, 172, 0.031372549);
+}
+body .body-content .sidenav .popular-post .post-cards .post:nth-child(3) {
+  background-color: rgba(89, 255, 222, 0.0196078431);
+}
+body .body-content .sidenav .popular-post .post-cards .post.expand {
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body .body-content .sidenav .popular-post .post-cards .post.expand p {
+  height: 100%;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+body .body-content .sidenav .popular-post .post-cards .post .header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+}
+body .body-content .sidenav .popular-post .post-cards .post .header .user-image {
+  width: 1.2rem;
+  height: 1.2rem;
+  pointer-events: none;
+  border-radius: 50px 50px;
+  padding: 0;
+  box-sizing: border-box;
+}
+body .body-content .sidenav .popular-post .post-cards .post .header .user-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px 50px;
+  background-size: cover;
+  box-sizing: border-box;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .body-content .sidenav .popular-post .post-cards .post .header .user-details {
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body .body-content .sidenav .popular-post .post-cards .post .header .user-details span {
+  font-weight: bold;
+  font-size: 0.8em;
+  font-family: monospace;
+}
+body .body-content .sidenav .popular-post .post-cards .post .header .post-details {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  left: auto;
+  margin-left: auto;
+}
+body .body-content .sidenav .popular-post .post-cards .post .header .post-details a {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: white;
+  cursor: pointer;
+}
+body .body-content .sidenav .popular-post .post-cards .post .header .post-details a i.bx {
+  font-size: 1em;
+}
+body .body-content .sidenav .popular-post .post-cards .post .post-body {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+body .body-content .sidenav .popular-post .post-cards .post .post-body p {
+  font-size: 0.8em;
+  height: 75%;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Ubuntu";
+  font-weight: 300;
+  word-spacing: 0.1cm;
+  box-sizing: border-box;
+}
+body .body-content .sidenav .popular-post .post-cards .post .post-body .applauds {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+body .body-content .sidenav .popular-post .post-cards .post .post-body .applauds a {
+  text-decoration: none;
+  color: white;
+  width: 20%;
+}
+body .body-content .sidenav .popular-post .post-cards .post .post-body .applauds .action {
+  width: 60%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+body .body-content .sidenav .popular-post .post-cards .post .post-body .applauds .action .readmore {
+  background-color: var(--navbar-color);
+  border: none;
+  border-radius: 20px 20px;
+  color: white;
+  font-size: 0.8em;
+  padding: 0.5rem 1rem;
+  margin-bottom: -15%;
+  cursor: pointer;
+}
+body .body-content .sidenav .extra {
+  z-index: 99;
+  height: 25%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  font-family: "Poppins";
+}
+body .body-content .sidenav .extra a.btn {
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  color: white;
+  background-color: var(--btn-bg);
+}
+body .body-content .main {
+  width: 70%;
+  height: 90vh;
+  position: relative;
+  margin-left: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2%;
+  padding-bottom: 0;
+}
+body .body-content .main .messages-area {
+  width: 90%;
+  height: 75vh;
+  overflow-y: scroll;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2em;
+  box-sizing: border-box;
+}
+body .body-content .main .messages-area::-webkit-scrollbar {
+  width: 0.5rem;
+  background: transparent;
+  height: 1rem;
+}
+body .body-content .main .messages-area::-webkit-scrollbar-thumb {
+  height: 2rem;
+  border-radius: 20px 20px;
+  margin: 20rem;
+  background-color: var(--navbar-color);
+}
+body .body-content .main .messages-area::-webkit-scrollbar-track {
+  width: 2%;
+  padding: 4rem;
+}
+body .body-content .main .messages-area::-webkit-scrollbar-track-piece {
+  width: 20px;
+}
+body .body-content .main .messages-area .post-cards {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 2%;
+  padding-bottom: 0;
+}
+body .body-content .main .messages-area .post-cards .post {
+  border-radius: 0.5rem;
+  width: 100%;
+  max-height: 25vh;
+  min-height: -moz-fit-content !important;
+  min-height: fit-content !important;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-sizing: border-box;
+  background: var(--accent-color);
+  padding: 0.5rem 0.8rem;
+  color: white;
+  font-family: "Ubuntu";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.082);
+  transition: all 0.4s ease-in-out;
+}
+body .body-content .main .messages-area .post-cards .post:nth-child(1) {
+  background-color: rgba(89, 172, 255, 0.031372549);
+}
+body .body-content .main .messages-area .post-cards .post:nth-child(2) {
+  background-color: rgba(255, 89, 172, 0.031372549);
+}
+body .body-content .main .messages-area .post-cards .post:nth-child(3) {
+  background-color: rgba(89, 255, 222, 0.0196078431);
+}
+body .body-content .main .messages-area .post-cards .post.expand {
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 1rem;
+}
+body .body-content .main .messages-area .post-cards .post.expand .post-body p {
+  height: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: unset;
+}
+body .body-content .main .messages-area .post-cards .post.expand .post-body .applauds .action {
+  margin-bottom: -1rem;
+}
+body .body-content .main .messages-area .post-cards .post .header {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+body .body-content .main .messages-area .post-cards .post .header .user-image {
+  width: 1.5rem;
+  height: 1.5rem;
+  pointer-events: none;
+  border-radius: 50px 50px;
+  padding: 0;
+  box-sizing: border-box;
+}
+body .body-content .main .messages-area .post-cards .post .header .user-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px 50px;
+  background-size: cover;
+  box-sizing: border-box;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .body-content .main .messages-area .post-cards .post .header .user-details {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+}
+body .body-content .main .messages-area .post-cards .post .header .user-details span {
+  font-weight: bold;
+  font-size: 1em;
+  font-family: "cheeky rabbit";
+}
+body .body-content .main .messages-area .post-cards .post .header .post-details {
+  align-self: flex-start;
+  display: flex;
+  left: auto;
+  margin-left: auto;
+}
+body .body-content .main .messages-area .post-cards .post .header .post-details span {
+  font-weight: bold;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.507);
+}
+body .body-content .main .messages-area .post-cards .post .post-body {
+  width: 90%;
+  height: 80%;
+  box-sizing: border-box;
+  transition: 0.4s ease;
+}
+body .body-content .main .messages-area .post-cards .post .post-body p {
+  height: 60%;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 0.83em;
+  font-family: "Poppins";
+  font-weight: 300;
+  word-spacing: 0.1cm;
+}
+body .body-content .main .messages-area .post-cards .post .post-body .applauds {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+body .body-content .main .messages-area .post-cards .post .post-body .applauds a {
+  text-decoration: none;
+  color: white;
+  width: 10%;
+  font-size: 1.1em;
+}
+body .body-content .main .messages-area .post-cards .post .post-body .applauds a small {
+  font-weight: bold;
+}
+body .body-content .main .messages-area .post-cards .post .post-body .applauds .action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+body .body-content .main .messages-area .post-cards .post .post-body .applauds .action .readmore {
+  background-color: var(--navbar-color);
+  border: none;
+  border-radius: 20px 20px;
+  color: white;
+  font-size: 0.9em;
+  padding: 0.5rem 1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+body .body-content .main .action-area {
+  width: 90%;
+  height: 20%;
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+body .body-content .main .action-area form {
+  width: 60%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 50%;
+}
+body .body-content .main .action-area form .extra-action {
+  display: none;
+}
+body .body-content .main .action-area form .close {
+  display: none;
+}
+body .body-content .main .action-area form:focus-within {
+  height: 50vh !important;
+  border: 1px solid rgba(255, 255, 255, 0.062);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.308);
+  margin-top: -40vh;
+  z-index: 9;
+  background-color: #0C0C0C;
+  border-radius: 10px;
+  padding: 0.5rem;
+  flex-direction: column;
+}
+body .body-content .main .action-area form:focus-within .bx-navigation.first {
+  display: none;
+}
+body .body-content .main .action-area form:focus-within .close {
+  display: flex;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+body .body-content .main .action-area form:focus-within .close .bx {
+  font-size: 24px;
+}
+body .body-content .main .action-area form:focus-within .extra-action {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: var(--accent-color);
+  justify-content: space-around;
+}
+body .body-content .main .action-area form:focus-within .extra-action .image-label {
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.295);
+  border-radius: 3px;
+}
+body .body-content .main .action-area form:focus-within .extra-action .image-label .add_image {
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  opacity: 0;
+}
+body .body-content .main .action-area form:focus-within .extra-action .image-label small {
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-family: "Cheeky Rabbit";
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.705);
+}
+body .body-content .main .action-area form:focus-within .extra-action .image-label i.bx {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.705);
+}
+body .body-content .main .action-area form:focus-within .extra-action .image-label .bx-image {
+  left: 5%;
+}
+body .body-content .main .action-area form:focus-within .extra-action .image-label .bx-plus {
+  right: 5%;
+  top: auto;
+}
+body .body-content .main .action-area form:focus-within .extra-action .btn {
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  background-color: white;
+  display: flex;
+  width: 100%;
+  border-radius: 3px;
+  font-family: "Cheeky Rabbit";
+  color: black;
+  font-size: 1.5em;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+}
+body .body-content .main .action-area form:focus-within textarea {
+  margin: 0 !important;
+  height: 100% !important;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.074) !important;
+}
+body .body-content .main .action-area form textarea {
+  width: 100%;
+  padding: 0.8em 1.5em;
+  height: 100%;
+  resize: none;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.037);
+  letter-spacing: 0.05cm;
+  font-size: 1.2em;
+  font-family: "cheeky rabbit";
+  outline: none;
+  margin: 0.2rem;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.705);
+  background-color: var(--accent-color);
+}
+body .body-content .main .action-area form textarea:focus {
+  border: none;
+  height: 30vh;
+}
+body .body-content .main .action-area form .bx {
+  color: white;
+  font-size: 1.2em;
+}
+body .body-content .main .action-area form .bx.first {
+  position: absolute;
+  right: 0;
+  left: 94%;
+}
+body .body-content .main .action-area .footer {
+  width: 90%;
+  height: 50%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .body-content .main .action-area .footer .content {
+  width: 60%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.2rem 0.5rem;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+  font-family: "Ubuntu";
+  box-sizing: border-box;
+}
+body .body-content .main .action-area .footer .content h4 {
+  font-weight: bold;
+  font-family: "cheeky rabbit";
+  color: white;
+  margin: 0;
+  font-size: 1.2em;
+  letter-spacing: 0.03cm;
+}
+body .body-content .main .action-area .footer .content small {
+  font-size: 0.85em;
+  font-style: italic;
+  box-sizing: border-box;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.473);
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    overflow-y: scroll;
+    box-sizing: border-box;
+  }
+  body .navbar {
+    box-sizing: border-box;
+  }
+  body .navbar .nav-trigger {
+    width: 4rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    height: 4rem;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  body .navbar .nav-trigger.active span {
+    border-radius: 5px;
+    width: 60%;
+    height: 10%;
+    background: white;
+    display: flex;
+    align-self: flex-end;
+    margin: 0.2rem;
+    transition: 0.4s ease;
+  }
+  body .navbar .nav-trigger.active span:nth-child(1) {
+    width: 100%;
+    transform: rotate(45deg) translateX(25%);
+  }
+  body .navbar .nav-trigger.active span:nth-child(2) {
+    width: 75%;
+    display: none;
+    transform: rotate(-45deg);
+  }
+  body .navbar .nav-trigger.active span:nth-child(3) {
+    width: 100%;
+    transform: rotate(-40deg) translateX(20%);
+  }
+  body .navbar .nav-trigger span {
+    border-radius: 5px;
+    width: 60%;
+    height: 10%;
+    background: white;
+    display: flex;
+    align-self: flex-end;
+    margin: 0.2rem;
+    transition: 0.4s ease;
+    position: relative;
+  }
+  body .navbar .nav-trigger span:nth-child(1) {
+    width: 100%;
+  }
+  body .navbar .nav-trigger span:nth-child(2) {
+    width: 75%;
+    display: none;
+  }
+  body .navbar .nav-trigger span:nth-child(3) {
+    width: 100%;
+  }
+  body .navbar .nav-logo {
+    width: 30%;
+    box-sizing: border-box;
+  }
+  body .navbar .nav-logo a h3 {
+    font-size: 1.6em;
+  }
+  body .navbar .nav-content {
+    width: 20%;
+    box-sizing: border-box;
+  }
+  body .navbar .nav-content li a span {
+    display: none;
+  }
+  body .navbar .nav-content li a i.bx {
+    font-size: 1.3em;
+  }
+  body .body-content .sidebar {
+    display: none;
+  }
+  body .body-content .sidenav {
+    height: 90vh;
+    width: 80%;
+    box-sizing: border-box;
+    position: fixed;
+    background: var(--bg-color);
+    left: -80%;
+    z-index: 22;
+  }
+  body .body-content .sidenav.active {
+    left: 0 !important;
+  }
+  body .body-content .sidenav .close {
+    position: absolute;
+    right: 2%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body .body-content .sidenav .close span {
+    color: white;
+    font-size: 1.5em;
+    font-family: "cheeky rabbit";
+    font-weight: bolder;
+    font-stretch: ultra-expanded;
+    cursor: pointer;
+  }
+  body .body-content .sidenav .headline h4 {
+    font-size: 1.1em;
+  }
+  body .body-content .sidenav .headline .list-item {
+    padding: 0.2rem;
+  }
+  body .body-content .sidenav .popular-post .post {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    height: 20vh !important;
+    box-sizing: border-box;
+  }
+  body .body-content .sidenav .popular-post .post .post-body {
+    height: 100%;
+  }
+  body .body-content .sidenav .popular-post .post .post-body p {
+    height: 60%;
+    overflow: hidden;
+    font-size: 0.83em;
+    font-family: "Poppins";
+    font-weight: 300;
+    word-spacing: 0.1cm;
+  }
+  body .body-content .sidenav .popular-post .post .post-body .applauds {
+    width: 100%;
+    height: 30%;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  body .body-content .sidenav .popular-post .post .post-body .applauds a {
+    text-decoration: none;
+    color: white;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+  }
+  body .body-content .sidenav .popular-post .post .post-body .applauds a small {
+    font-weight: bold;
+  }
+  body .body-content .sidenav .popular-post .post .post-body .applauds .action {
+    height: 100% !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    box-sizing: border-box;
+  }
+  body .body-content .sidenav .popular-post .post .post-body .applauds .action .readmore {
+    background-color: var(--navbar-color);
+    border: none;
+    border-radius: 20px 20px;
+    color: white;
+    font-size: 0.9em;
+    padding: 0.5rem 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    margin: 0 !important;
+  }
+  body .body-content .sidenav .popular-post .post.expand {
+    position: relative;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    padding-bottom: 1rem;
+  }
+  body .body-content .sidenav .popular-post .post.expand .post-body {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  body .body-content .sidenav .popular-post .post.expand .post-body p {
+    height: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    overflow: unset;
+  }
+  body .body-content .sidenav .popular-post .header h3 {
+    font-size: 1.1em;
+  }
+  body .body-content .main {
+    width: 100%;
+  }
+  body .body-content .main .messages-area {
+    width: 100%;
+  }
+  body .body-content .main .messages-area .post-cards .post {
+    height: 25vh;
+  }
+  body .body-content .main .messages-area .post-cards .post.expand {
+    position: relative;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 1rem;
+  }
+  body .body-content .main .messages-area .post-cards .post.expand .post-body {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  body .body-content .main .messages-area .post-cards .post.expand .post-body p {
+    height: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    overflow: unset;
+  }
+  body .body-content .main .messages-area .post-cards .post.expand .post-body .applauds .action {
+    margin-bottom: -1rem;
+  }
+  body .body-content .main .messages-area .post-cards .post .post-body {
+    width: 90%;
+    height: 80%;
+    box-sizing: border-box;
+  }
+  body .body-content .main .messages-area .post-cards .post .post-body p {
+    height: 60%;
+    overflow: hidden;
+    font-size: 0.83em;
+    font-family: "Poppins";
+    font-weight: 300;
+    word-spacing: 0.1cm;
+  }
+  body .body-content .main .messages-area .post-cards .post .post-body .applauds {
+    width: 100%;
+    height: 20%;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  body .body-content .main .messages-area .post-cards .post .post-body .applauds a {
+    text-decoration: none;
+    color: white;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+  }
+  body .body-content .main .messages-area .post-cards .post .post-body .applauds a small {
+    font-weight: bold;
+  }
+  body .body-content .main .messages-area .post-cards .post .post-body .applauds .action {
+    height: 100%;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    box-sizing: border-box;
+  }
+  body .body-content .main .messages-area .post-cards .post .post-body .applauds .action .readmore {
+    background-color: var(--navbar-color);
+    border: none;
+    border-radius: 20px 20px;
+    color: white;
+    font-size: 0.9em;
+    padding: 0.5rem 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    margin: 0;
+  }
+  body .body-content .main .action-area {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  body .body-content .main .action-area form {
+    width: 90%;
+  }
+  body .body-content .main .action-area form input {
+    width: 100%;
+    padding: 0.8em 1.5em;
+    border-radius: 0.3rem;
+    border: none;
+    letter-spacing: 0.05cm;
+    font-size: 1.2em;
+    font-family: "cheeky rabbit";
+    outline: none;
+    margin: 0.2rem;
+    color: rgba(255, 255, 255, 0.705);
+    background-color: var(--accent-color);
+  }
+  body .body-content .main .action-area form .bx {
+    left: 90%;
+    font-size: 1.2em;
+  }
+  body .body-content .main .action-area .footer {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body .body-content .main .action-area .footer .content {
+    width: 80%;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0.2rem 0.5rem;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+    font-family: "Ubuntu";
+    box-sizing: border-box;
+  }
+  body .body-content .main .action-area .footer .content h4 {
+    font-weight: bold;
+    font-family: "cheeky rabbit";
+    color: white;
+    margin: 0;
+    font-size: 1.2em;
+    letter-spacing: 0.03cm;
+  }
+  body .body-content .main .action-area .footer .content small {
+    font-size: 0.85em;
+    font-style: italic;
+    box-sizing: border-box;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.473);
+  }
+}/*# sourceMappingURL=theme.css.map */
