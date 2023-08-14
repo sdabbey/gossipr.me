@@ -1,0 +1,316 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&Poppins&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'stylesheets/theme.css' %}">
+    <title>iConfess</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+         <!-- Nav-trigger -->
+        <div class="nav-trigger" id="nav-trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-logo">
+            <a href="#"><h3>iConfess</h3></a>
+        </div>
+        <div class="nav-content">
+           
+            <li><a href="#"><i class="bx bx-plus"></i><span>Leave a Post</span></a></li>
+
+           
+        </div>
+    </nav>
+    <!-- Main body content -->
+   <div class="body-content">
+        <!-- Sidenav -->
+        <div class="sidenav" id="sidenav">
+            <div class="close" id="sidenav_close">
+                <span>X</span>
+            </div>
+            <div class="headline">
+                <h4><i class="bx bxs-hand"></i>Today's Most Applauded</h4>
+                <ul class="list-item">
+                    <li>
+                        <div class="avatar">
+                            <img src="imgs/Me.jpg" alt="">
+                        </div>
+                        <span class="username">i/rebazfuky</span>
+                    </li>
+                    <li>
+                        <div class="avatar">
+                            <img src="imgs/Flyer.png" alt="">
+                        </div>
+                        <span class="username">i/fantasticshowboyz</span>
+                    </li>
+                    <li>
+                        <div class="avatar">
+                            <img src="imgs/me.jpeg" alt="">
+                        </div>
+                        <span class="username">i/campusroit</span>
+                    </li>
+                    <li>
+                        <div class="avatar">
+                            <img src="imgs/Flyer.png" alt="">
+                        </div>
+                        <span class="username">i/legonisreal</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="search-post">
+                <input type="search" name="search-post" id="search-post" placeholder="Search confession...">
+                <i class="bx bx-search"></i>
+            </div>
+            <div class="popular-post">
+                <div class="header">
+                    <h3>Popular Posts</h3>
+                    <a href="#">see all</a>
+                </div>
+                <div class="post-cards">
+               
+                   
+                   {% for post in posts %}
+                   <div class="post">
+                    <div class="header">
+                        <div class="user-image">
+                            <img src="{% static 'imgs/Flyer.png' %}" alt="">
+                        </div>
+                        <div class="user-details">
+                            <span>i/{{post.username}}</span>
+                            
+                        </div>
+                        <div class="post-details">
+                            <a href="#"><i class="bx bxs-hand"></i></a>
+                            
+                        </div>
+                    </div>
+                    <div class="post-body">
+                        <p>
+                           {{post.content}}
+                        </p>
+                        <div class="applauds">
+                            <a href="#">
+                                <i class="bx bxs-hand"></i>
+                                <small>2k</small>
+                            </a>
+                            <div class="action">
+                                <button class="readmore" id="readmore">
+                                    <i class="bx bx-chevron-down"></i>
+                                    Read more
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   {% endfor %}
+                </div>
+            </div>
+            <div class="extra">
+                <a href="#" class="btn add-slot"><i class="bx bx-comment-dots"></i>Request Ad Slot</a>
+                <a href="#" class="btn remove-post"><i class="bx bx-trash"></i>Remove Post</a>
+            </div>
+        </div>
+        <!-- Main -->
+        <div class="main">
+            <div class="messages-area">
+                <div class="post-cards">
+                    {% for post in posts %}
+                    <div class="post">
+                        <div class="header">
+                            <div class="user-image">
+                                <img src="{% static 'imgs/Flyer.png' %}" alt="">
+                            </div>
+                            <div class="user-details">
+                                <span>i/{{post.username}}</span>
+                               
+                            </div>
+                            <div class="post-details">
+                                <span>{{post.pub_date|time}}</span>
+                            </div>
+                        </div>
+                        <div class="post-body">
+                            <p>
+                               {{post.content}}
+                            </p>
+                            <div class="applauds">
+                                <a href="#">
+                                    <i class="bx bxs-hand"></i>
+                                    <small>2k</small>
+                                </a>
+                                <div class="action">
+                                    <button class="readmore" id="readmore">
+                                        <i class="bx bx-chevron-down"></i>
+                                        Read more
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="post">
+                        <div class="header">
+                            <div class="user-image">
+                                <img src="imgs/Flyer.png" alt="">
+                            </div>
+                            <div class="user-details">
+                                <span>i/rebazfuky</span>
+                               
+                            </div>
+                            <div class="post-details">
+                                <span>Just now</span>
+                            </div>
+                        </div>
+                        <div class="post-body">
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non quod voluptates reprehenderit ratione, voluptatum, dolore maxime dolorum officiis illum officia, assumenda veritatis aut eveniet!
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore tenetur aliquam neque quis, expedita et nemo. Unde consequuntur, cupiditate voluptatem dicta veritatis quas itaque molestias alias quam in excepturi, neque nobis nostrum enim? Iusto, ducimus! Modi excepturi dolor ea, velit quo sapiente neque dolorem deserunt, voluptates, tempore quae pariatur. Ducimus!
+                            </p>
+                            <div class="applauds">
+                                <a href="#">
+                                    <i class="bx bxs-hand"></i>
+                                    <small>2k</small>
+                                </a>
+                                <div class="action">
+                                    <button class="readmore" id="readmore">
+                                        <i class="bx bx-chevron-down"></i>
+                                        Read more
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="header">
+                            <div class="user-image">
+                                <img src="imgs/Flyer.png" alt="">
+                            </div>
+                            <div class="user-details">
+                                <span>i/rebazfuky</span>
+                               
+                            </div>
+                            <div class="post-details">
+                                <span>Just now</span>
+                            </div>
+                        </div>
+                        <div class="post-body">
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non quod voluptates reprehenderit ratione, voluptatum, dolore maxime dolorum officiis illum officia, assumenda veritatis aut eveniet!
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore tenetur aliquam neque quis, expedita et nemo. Unde consequuntur, cupiditate voluptatem dicta veritatis quas itaque molestias alias quam in excepturi, neque nobis nostrum enim? Iusto, ducimus! Modi excepturi dolor ea, velit quo sapiente neque dolorem deserunt, voluptates, tempore quae pariatur. Ducimus!
+                            </p>
+                            <div class="applauds">
+                                <a href="#">
+                                    <i class="bx bxs-hand"></i>
+                                    <small>2k</small>
+                                </a>
+                                <div class="action">
+                                    <button class="readmore" id="readmore">
+                                        <i class="bx bx-chevron-down"></i>
+                                        Read more
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+               
+            </div>
+            <div class="action-area">
+                <form action="create_post" method="post">
+                    {% csrf_token %}
+                    <div class="close">
+                        <b class="bx bx-x"></b>
+                    </div>
+                    <textarea name="content" id="post" placeholder="What's on your mind...?"></textarea>
+                    <i class="bx bx-navigation first"></i>
+                    <div class="extra-action">
+                        <label for="image-input" class="image-label">
+                            <i class="bx bx-image"></i>
+                            <small>Tap to add image</small>
+                            <input class="add_image"  type="file" name="add_image" id="add_image">
+                            <i class="bx bx-plus"></i>
+                        </label>
+                        <button type="submit" class="btn send-post">Send Post </button>
+                    </div>
+                </form>
+                <footer class="footer">
+                    <div class="content">
+                        <h4>iconfess</h4><small> is an anonymous confession and self-help platform. Don't worry this is a safe space, all user data is not stored except posts.Your identity is safe and protected.</small>
+                    </div>
+                </footer>
+            </div>
+            
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+        
+            <ul class="nav_list">
+            
+                <li><a href="#">Need Help</a></li>
+                <li><a href="#">Support Us</a></li>
+            
+            </ul>
+            <div class="socials">
+                <a target="_blank" href="https://github.com/s-d-abbey"><i class="bx bxl-github"></i></a>
+                <a target="_blank" href="https://www.instagram.com/s.d.abbey/"><i class="bx bxl-instagram"></i></a>
+                <a target="_blank" href="https://twitter.com/s_d_abbey"><i class="bx bxl-twitter"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/samuel-desmond-abbey-darko-b5586b1b5/"><i class="bx bxl-linkedin"></i></a>
+                <a target="_blank" href="https://stackoverflow.com/users/19025251/s-d-abbey"><i class="bx bxl-stack-overflow"></i></a>
+    
+            </div>
+        
+        </div>
+   </div>
+
+
+   <script>
+    //Sidenav 
+    const nav_trigger = document.getElementById("nav-trigger")
+    const sidenav = document.getElementById("sidenav")
+    const sidenav_close = document.getElementById("sidenav_close")
+    sidenav_close.addEventListener("click", function(){
+        sidenav.classList.remove("active")
+        nav_trigger.classList.remove("active")
+    })
+    nav_trigger.addEventListener("click", function() {
+        nav_trigger.classList.toggle("active")
+        sidenav.classList.toggle("active")
+    })
+
+    //Readmore
+    const readmore_btns = document.querySelectorAll("#readmore")
+    for(const btn of readmore_btns){
+        btn.addEventListener("click", ()=>{
+            if(btn.classList.contains("read")){
+                btn.innerHTML="<i class='bx bx-chevron-down'></i> Read more"
+                btn.classList.remove("read");
+            }else{
+                btn.innerHTML="<i class='bx bx-chevron-up'></i> Read less"
+                btn.classList.add("read");
+            }
+            
+            
+            
+            const parentDiv = btn.closest(".post-body")
+            const postDiv = btn.closest(".post")
+            postDiv.classList.toggle("expand")
+            const post_paragraph = parentDiv.querySelector("p")
+            if(post_paragraph){
+
+                post_paragraph.classList.toggle("expand")
+            }
+        })
+        
+    }
+   </script>
+</body>
+</html>
